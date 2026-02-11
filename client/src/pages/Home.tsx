@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
  * - Left-aligned content with right-side interactive terminal
  * - Typography: Space Grotesk for headings, Inter for body
  * - Animations: Smooth typewriter effect for terminal, fade-in for content
+ * - All data sourced from Danilo's real LinkedIn profile
  */
 
 export default function Home() {
@@ -17,13 +18,13 @@ export default function Home() {
   useEffect(() => {
     const lines = [
       "import pandas as pd",
-      "import seaborn as sns",
+      "import numpy as np",
       "",
       "# ETL: Carregando Vendas",
       'df = pd.read_sql("SELECT * FROM sales")',
       "",
       "# Gerando Insights",
-      "insight = df.groupby('region').sum()",
+      "kpis = df.groupby('region').agg({'revenue': 'sum'})",
       'print("Dashboard Atualizado!")',
     ];
 
@@ -68,6 +69,7 @@ export default function Home() {
               { label: "Sobre", id: "about" },
               { label: "Projetos", id: "projects" },
               { label: "Experiência", id: "experience" },
+              { label: "Formação", id: "education" },
               { label: "Contato", id: "contact" },
             ].map((item) => (
               <li key={item.id}>
@@ -98,6 +100,7 @@ export default function Home() {
               { label: "Sobre", id: "about" },
               { label: "Projetos", id: "projects" },
               { label: "Experiência", id: "experience" },
+              { label: "Formação", id: "education" },
               { label: "Contato", id: "contact" },
             ].map((item) => (
               <button
@@ -131,7 +134,7 @@ export default function Home() {
             </h1>
 
             <p className="text-gray-400 text-lg mb-8 max-w-xl">
-              Analista de Dados especializado em transformar dados em insights estratégicos. Experiência em ETL, SQL, Python, Estatística e dashboards, atuando desde a definição de KPIs até a criação de visualizações para tomada de decisão.
+              Analista de Dados na Data Mundo, especializado em transformar dados em insights estratégicos. Experiência em ETL, SQL, Python, Estatística e Power BI, atuando desde a definição de KPIs até a criação de dashboards para tomada de decisão.
             </p>
 
             <div className="flex gap-4 flex-wrap">
@@ -156,9 +159,9 @@ export default function Home() {
             <div className="w-full max-w-md bg-gray-900 border border-gray-700 rounded-xl p-6 shadow-2xl">
               {/* Terminal Header Dots */}
               <div className="flex gap-2 mb-4">
-                <div className="w-3 h-3 rounded-full bg-gray-600" />
-                <div className="w-3 h-3 rounded-full bg-gray-600" />
-                <div className="w-3 h-3 rounded-full bg-gray-600" />
+                <div className="w-3 h-3 rounded-full bg-red-500/60" />
+                <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
+                <div className="w-3 h-3 rounded-full bg-green-500/60" />
               </div>
 
               {/* Terminal Content */}
@@ -167,29 +170,27 @@ export default function Home() {
                   if (!line) return <div key={idx}>&nbsp;</div>;
                   return (
                     <div key={idx} className="animate-fade-in">
-                      {line === "" ? (
-                      <div>&nbsp;</div>
-                    ) : line.includes("import") ? (
-                      <div>
-                        <span className="text-pink-500">import</span>{" "}
-                        <span className="text-gray-300">{line.split("import ")[1]}</span>
-                      </div>
-                    ) : line.includes("def") || line.includes("pd.") || line.includes("df.") ? (
-                      <div>
-                        <span className="text-cyan-400">{line.split("(")[0]}</span>
-                        <span className="text-gray-300">
-                          {line.substring(line.split("(")[0].length)}
-                        </span>
-                      </div>
-                    ) : line.includes("#") ? (
-                      <div className="text-gray-600 italic">{line}</div>
-                    ) : line.includes('"') ? (
-                      <div>
-                        <span className="text-yellow-400">{line}</span>
-                      </div>
-                    ) : (
-                      <div className="text-gray-300">{line}</div>
-                    )}
+                      {line.includes("import") ? (
+                        <div>
+                          <span className="text-pink-500">import</span>{" "}
+                          <span className="text-gray-300">{line.split("import ")[1]}</span>
+                        </div>
+                      ) : line.includes("pd.") || line.includes("df.") || line.includes("kpis") ? (
+                        <div>
+                          <span className="text-cyan-400">{line.split("(")[0]}</span>
+                          <span className="text-gray-300">
+                            {line.includes("(") ? line.substring(line.indexOf("(")) : ""}
+                          </span>
+                        </div>
+                      ) : line.includes("#") ? (
+                        <div className="text-gray-600 italic">{line}</div>
+                      ) : line.includes('"') ? (
+                        <div>
+                          <span className="text-yellow-400">{line}</span>
+                        </div>
+                      ) : (
+                        <div className="text-gray-300">{line}</div>
+                      )}
                     </div>
                   );
                 })}
@@ -204,26 +205,26 @@ export default function Home() {
               <div className="mt-6 pt-4 border-t border-gray-700 flex justify-around text-center">
                 <div>
                   <div className="text-gray-500 text-xs uppercase tracking-wide mb-1">
-                    Dados
+                    Projetos
                   </div>
                   <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-400 bg-clip-text text-transparent font-black text-xl">
-                    1.5TB
+                    4+
                   </div>
                 </div>
                 <div>
                   <div className="text-gray-500 text-xs uppercase tracking-wide mb-1">
-                    KPIs
+                    Certificações
                   </div>
                   <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-400 bg-clip-text text-transparent font-black text-xl">
-                    99%
+                    4
                   </div>
                 </div>
                 <div>
                   <div className="text-gray-500 text-xs uppercase tracking-wide mb-1">
-                    ROI
+                    Nota
                   </div>
                   <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-400 bg-clip-text text-transparent font-black text-xl">
-                    +30%
+                    9.7
                   </div>
                 </div>
               </div>
@@ -249,7 +250,7 @@ export default function Home() {
                   Tenho foco em interpretação de dados, identificação de padrões e geração de insights que apoiam decisões estratégicas. Possuo perfil curioso, colaborativo e orientado a resultados, sempre buscando simplificar processos e entregar soluções úteis.
                 </p>
                 <p>
-                  Minha atuação é alinhada a metodologias ágeis, garantindo entregas eficientes e bem estruturadas. Trabalho com a convicção de que dados só têm valor quando geram impacto real.
+                  Minha atuação é alinhada a metodologias ágeis, garantindo entregas eficientes e bem estruturadas. Trabalho com a convicção de que dados só têm valor quando geram impacto real, princípio esse que guia meu trabalho todos os dias.
                 </p>
               </div>
 
@@ -260,6 +261,10 @@ export default function Home() {
                   "Python (Pandas, Numpy)",
                   "ETL & Pentaho",
                   "Excel & Google Sheets",
+                  "Tableau",
+                  "Figma (Prototipação)",
+                  "Estatística & ML",
+                  "Metodologias Ágeis",
                   "Git & Versionamento",
                 ].map((skill) => (
                   <div
@@ -272,12 +277,29 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex items-center justify-center">
-              <div className="text-center border border-gray-800 rounded-lg p-8 bg-gray-900">
-                <div className="text-4xl mb-3">🚀</div>
-                <h3 className="text-white font-bold mb-2">Data Driven</h3>
-                <p className="text-gray-500 text-sm">
-                  Transformando perguntas em queries e dados em lucro.
+            <div className="flex flex-col gap-4 items-center justify-start">
+              <div className="text-center border border-gray-800 rounded-lg p-6 bg-gray-900 w-full">
+                <div className="text-3xl mb-2">🎓</div>
+                <h3 className="text-white font-bold mb-1 text-sm">UNINTER</h3>
+                <p className="text-gray-500 text-xs">
+                  CST em Ciência de Dados
+                </p>
+                <p className="text-cyan-400 text-xs font-mono mt-1">
+                  2024 - 2027 • Nota 9.7
+                </p>
+              </div>
+              <div className="text-center border border-gray-800 rounded-lg p-6 bg-gray-900 w-full">
+                <div className="text-3xl mb-2">🌍</div>
+                <h3 className="text-white font-bold mb-1 text-sm">Inglês C2</h3>
+                <p className="text-gray-500 text-xs">
+                  EF SET 84/100 Proficient
+                </p>
+              </div>
+              <div className="text-center border border-gray-800 rounded-lg p-6 bg-gray-900 w-full">
+                <div className="text-3xl mb-2">🚀</div>
+                <h3 className="text-white font-bold mb-1 text-sm">Data Driven</h3>
+                <p className="text-gray-500 text-xs">
+                  Dados só têm valor quando geram impacto real.
                 </p>
               </div>
             </div>
@@ -292,22 +314,27 @@ export default function Home() {
             Projetos <span className="text-gray-600">em Destaque</span>
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
-                title: "Dashboard Automotivo",
-                desc: "Uma solução completa de BI para monitoramento de vendas, margem e performance de concessionárias em nível nacional.",
-                tags: ["Power BI", "DAX", "ETL"],
+                title: "Dashboard TechFlow Store",
+                desc: "Solução de BI ponta a ponta com integração de IA. Geração de dados com Python/Pandas, ETL no Power Query, modelagem Star Schema, DAX avançado e Árvore de Decomposição para análise de causa raiz.",
+                tags: ["Power BI", "DAX", "Python", "IA", "Star Schema"],
               },
               {
-                title: "Dashboard Fast Food",
-                desc: "Análise operacional focada em eficiência de cozinha, tempo de espera e satisfação do cliente em redes de fast food.",
-                tags: ["Power BI", "SQL", "GeoAnalytics"],
+                title: "Inteligência Financeira",
+                desc: "Solução integrada com 3 dashboards estratégicos: Performance de Vendas, Fluxo de Caixa e Simulador Financeiro (What-If) para análise de cenários e tomada de decisão.",
+                tags: ["Power BI", "DAX", "Power Query", "What-If"],
               },
               {
-                title: "TechFlow Store",
-                desc: "Interface moderna de análise de vendas com foco em experiência do usuário e visualização de dados intuitiva.",
-                tags: ["Figma", "UI/UX", "Power BI"],
+                title: "KPIs Setor Automotivo",
+                desc: "Dashboard para monitoramento de vendas brutas, ranking por país, comparativo custo vs faturamento, segmentos rentáveis e top produtos vendidos.",
+                tags: ["Power BI", "DAX", "ETL", "KPIs"],
+              },
+              {
+                title: "KPIs Fast Food",
+                desc: "Análise de indicadores comerciais e operacionais: evolução temporal do faturamento, lucratividade por categoria, perfil do cliente e eficiência operacional por região.",
+                tags: ["Power BI", "SQL", "GeoAnalytics", "KPIs"],
               },
             ].map((project, idx) => (
               <div
@@ -325,7 +352,7 @@ export default function Home() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7M3 7a2 2 0 012-2h14a2 2 0 012 2m0 0V5a2 2 0 00-2-2H5a2 2 0 00-2 2v2"
+                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
                     />
                   </svg>
                   <span className="text-cyan-400 text-xl group-hover:translate-x-1 transition-transform">
@@ -363,49 +390,105 @@ export default function Home() {
           </h2>
 
           <div className="space-y-8 max-w-2xl">
-            {[
-              {
-                title: "Analista de Dados Senior",
-                company: "Tech Company",
-                date: "2023 - Presente",
-                items: [
-                  "Desenvolvimento de dashboards estratégicos em Power BI",
-                  "Otimização de pipelines ETL com Python e SQL",
-                  "Liderança de projetos de BI e análise de dados",
-                ],
-              },
-              {
-                title: "Analista de Dados",
-                company: "Data Solutions",
-                date: "2021 - 2023",
-                items: [
-                  "Criação de modelos de dados e análises exploratórias",
-                  "Automação de processos com Python e Pandas",
-                  "Suporte a stakeholders com insights e relatórios",
-                ],
-              },
-            ].map((exp, idx) => (
-              <div key={idx} className="relative pl-8 border-l border-gray-700">
-                <div className="absolute left-[-13px] top-0 w-6 h-6 rounded-full border-2 border-white bg-black" />
-                <h3 className="text-xl font-bold text-white">{exp.title}</h3>
-                <p className="text-gray-500 text-sm font-mono mb-2">
-                  {exp.company} • {exp.date}
-                </p>
-                <ul className="space-y-1 text-gray-400">
-                  {exp.items.map((item, i) => (
-                    <li key={i} className="text-sm">
-                      <span className="text-cyan-400">▹</span> {item}
-                    </li>
+            <div className="relative pl-8 border-l border-gray-700">
+              <div className="absolute left-[-13px] top-0 w-6 h-6 rounded-full border-2 border-cyan-400 bg-black" />
+              <h3 className="text-xl font-bold text-white">Analista de Dados</h3>
+              <p className="text-gray-500 text-sm font-mono mb-2">
+                Data Mundo • Tempo Integral • Nov 2025 - Presente
+              </p>
+              <p className="text-gray-600 text-xs font-mono mb-3">
+                Porto Alegre, RS, Brasil • Remota
+              </p>
+              <ul className="space-y-1 text-gray-400">
+                {[
+                  "Entendimento do problema junto à área de negócios",
+                  "Priorização de tarefas e metodologias ágeis (Scrum)",
+                  "Mapeamento de Dados e ETL (Pentaho, SQL)",
+                  "Prototipação (Figma, Excel)",
+                  "Desenvolvimento de Dashboards (Power BI, Tableau)",
+                  "Desenvolvimento de indicadores (KPIs e OKRs)",
+                  "Documentação e manuais de usabilidade de Dashboards",
+                  "LGPD e Gamification",
+                ].map((item, i) => (
+                  <li key={i} className="text-sm">
+                    <span className="text-cyan-400">▹</span> {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Education & Certifications Section */}
+      <section id="education" className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-black mb-12">
+            Formação <span className="text-gray-600">& Certificações</span>
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Education */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
+                <span className="text-cyan-400">◆</span> Formação Acadêmica
+              </h3>
+              <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+                <h4 className="text-white font-bold mb-1">Centro Universitário Internacional UNINTER</h4>
+                <p className="text-gray-400 text-sm mb-2">Curso Superior de Tecnologia (CST) em Ciência de Dados</p>
+                <p className="text-gray-500 text-xs font-mono mb-3">Jul 2024 - Jan 2027 • Nota: 9.7</p>
+                <div className="flex flex-wrap gap-2">
+                  {["Python", "SQL", "Power BI", "Estatística", "Machine Learning", "Engenharia de Dados"].map((tag) => (
+                    <span key={tag} className="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded font-mono">
+                      {tag}
+                    </span>
                   ))}
-                </ul>
+                </div>
               </div>
-            ))}
+            </div>
+
+            {/* Certifications */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
+                <span className="text-cyan-400">◆</span> Certificações
+              </h3>
+              <div className="space-y-4">
+                {[
+                  {
+                    title: "Power BI + IA Bootcamp",
+                    issuer: "Xperiun | Data Analytics",
+                    date: "Jan 2026",
+                  },
+                  {
+                    title: "Formação em Power BI",
+                    issuer: "Escola DNC",
+                    date: "Jan 2026",
+                  },
+                  {
+                    title: "EF SET English Certificate",
+                    issuer: "EF SET • 84/100 (C2 Proficient)",
+                    date: "",
+                  },
+                  {
+                    title: "Data Scientist Track",
+                    issuer: "365 Data Science",
+                    date: "Ago 2025",
+                  },
+                ].map((cert, idx) => (
+                  <div key={idx} className="bg-gray-900 border border-gray-800 rounded-lg p-4 hover:border-gray-700 transition-colors">
+                    <h4 className="text-white font-bold text-sm">{cert.title}</h4>
+                    <p className="text-gray-500 text-xs">{cert.issuer}</p>
+                    {cert.date && <p className="text-gray-600 text-xs font-mono mt-1">{cert.date}</p>}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-6">
+      <section id="contact" className="py-20 px-6 bg-gray-950">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-4xl font-black mb-6">
             Vamos <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-400 bg-clip-text text-transparent">Conversar?</span>
@@ -415,28 +498,34 @@ export default function Home() {
           </p>
 
           <div className="flex gap-4 justify-center flex-wrap">
-            <Button className="bg-white text-black hover:bg-gray-200 font-bold px-8 py-6 rounded-full">
-              Email
-            </Button>
-            <Button
-              variant="outline"
-              className="border border-white/30 text-white hover:bg-white/5 font-bold px-8 py-6 rounded-full"
-            >
-              LinkedIn
-            </Button>
-            <Button
-              variant="outline"
-              className="border border-white/30 text-white hover:bg-white/5 font-bold px-8 py-6 rounded-full"
-            >
-              GitHub
-            </Button>
+            <a href="mailto:danilocsantos2005@gmail.com" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-white text-black hover:bg-gray-200 font-bold px-8 py-6 rounded-full">
+                Email
+              </Button>
+            </a>
+            <a href="https://www.linkedin.com/in/danilocerqueiradados/" target="_blank" rel="noopener noreferrer">
+              <Button
+                variant="outline"
+                className="border border-white/30 text-white hover:bg-white/5 font-bold px-8 py-6 rounded-full"
+              >
+                LinkedIn
+              </Button>
+            </a>
+            <a href="https://wa.me/5522988596587" target="_blank" rel="noopener noreferrer">
+              <Button
+                variant="outline"
+                className="border border-white/30 text-white hover:bg-white/5 font-bold px-8 py-6 rounded-full"
+              >
+                WhatsApp
+              </Button>
+            </a>
           </div>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="border-t border-gray-900 py-8 px-6 text-center text-gray-500 text-sm">
-        <p>© 2026 Danilo Cerqueira. Todos os direitos reservados.</p>
+        <p>© 2025 Danilo Cerqueira. Todos os direitos reservados.</p>
       </footer>
     </div>
   );

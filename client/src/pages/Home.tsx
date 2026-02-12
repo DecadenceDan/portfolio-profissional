@@ -461,24 +461,14 @@ export default function Home() {
               <div className="space-y-4">
                 {[
                   {
-                    title: "Power BI + IA Bootcamp",
-                    issuer: "Xperiun | Data Analytics",
-                    date: "Jan 2026",
-                  },
-                  {
-                    title: "Modelagem de Dados com Power BI",
-                    issuer: "Escola DNC",
-                    date: "Jan 2026",
-                  },
-                  {
                     title: "Formação em Power BI",
                     issuer: "Escola DNC",
                     date: "Jan 2026",
                   },
                   {
-                    title: "Data Analysis com Google Sheets / Excel",
-                    issuer: "Alura",
-                    date: "",
+                    title: "Power BI + IA Bootcamp",
+                    issuer: "Xperiun | Data Analytics",
+                    date: "Jan 2026",
                   },
                   {
                     title: "Data Scientist Track",
@@ -486,39 +476,19 @@ export default function Home() {
                     date: "Ago 2025",
                   },
                   {
-                    title: "Fundamentos de SQL",
+                    title: "Santander Tech+ | Ciência de Dados",
+                    issuer: "Ada Tech",
+                    date: "Jan 2025",
+                  },
+                  {
+                    title: "Formação em Python para Ciência de Dados",
                     issuer: "Alura",
-                    date: "",
+                    date: "Ago 2024",
                   },
                   {
-                    title: "Python para Análise de Dados",
+                    title: "Formação em Análise de Dados com Google Sheets / Excel",
                     issuer: "Alura",
-                    date: "",
-                  },
-                  {
-                    title: "Estatística com Python",
-                    issuer: "Alura",
-                    date: "",
-                  },
-                  {
-                    title: "Machine Learning com Python",
-                    issuer: "Alura",
-                    date: "",
-                  },
-                  {
-                    title: "Tableau Desktop Specialist",
-                    issuer: "Tableau",
-                    date: "",
-                  },
-                  {
-                    title: "Google Analytics Certification",
-                    issuer: "Google",
-                    date: "",
-                  },
-                  {
-                    title: "Scrum Master Certification",
-                    issuer: "Scrum.org",
-                    date: "",
+                    date: "Jul 2024",
                   },
                 ].map((cert, idx) => (
                   <div key={idx} className="bg-gray-900 border border-gray-800 rounded-lg p-4 hover:border-gray-700 transition-colors">
@@ -536,9 +506,9 @@ export default function Home() {
               <div className="space-y-4">
                 {[
                   {
-                    title: "EF SET English Certificate",
-                    issuer: "EF SET • 84/100 (C2 Proficient)",
-                    date: "Fluente",
+                    title: "EF SET English Certificate 84/100 (C2 Proficient)",
+                    issuer: "EF SET",
+                    date: "Nov 2025",
                   },
                 ].map((cert, idx) => (
                   <div key={idx} className="bg-gray-900 border border-gray-800 rounded-lg p-4 hover:border-gray-700 transition-colors">

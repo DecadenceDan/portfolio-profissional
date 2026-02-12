@@ -14,6 +14,15 @@ import InteractiveTerminal from "@/components/InteractiveTerminal";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -90,7 +99,11 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center justify-center pt-20 px-6">
+      <section id="home" className="min-h-screen flex items-center justify-center pt-20 px-6 relative overflow-hidden">
+        {/* Parallax Background */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-purple-900/5 to-transparent" style={{transform: `translateY(${scrollY * 0.5}px)`}} />
+        </div>
         <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="text-left">
@@ -125,6 +138,14 @@ export default function Home() {
               >
                 Entrar em Contato
               </Button>
+              <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663204593959/BcnBwcWxneRsgdCo.pdf" download>
+                <Button
+                  variant="outline"
+                  className="border border-cyan-400/50 text-cyan-400 hover:bg-cyan-400/10 font-bold px-8 py-6 rounded-full transition-all hover:border-cyan-400"
+                >
+                  Download CV
+                </Button>
+              </a>
             </div>
           </div>
 

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
+import InteractiveTerminal from "@/components/InteractiveTerminal";
 
 /**
  * Design Philosophy: Neon Dark Tech
@@ -13,34 +14,6 @@ import { Link } from "wouter";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [terminalLines, setTerminalLines] = useState<string[]>([]);
-
-  // Simulate terminal typing effect
-  useEffect(() => {
-    const lines = [
-      "import pandas as pd",
-      "import numpy as np",
-      "",
-      "# ETL: Carregando Vendas",
-      'df = pd.read_sql("SELECT * FROM sales")',
-      "",
-      "# Gerando Insights",
-      "kpis = df.groupby('region').agg({'revenue': 'sum'})",
-      'print("Dashboard Atualizado!")',
-    ];
-
-    let currentIndex = 0;
-    const interval = setInterval(() => {
-      if (currentIndex < lines.length) {
-        setTerminalLines((prev) => [...prev, lines[currentIndex]]);
-        currentIndex++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 300);
-
-    return () => clearInterval(interval);
-  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -157,52 +130,9 @@ export default function Home() {
 
           {/* Right Terminal */}
           <div className="flex justify-center items-center">
-            <div className="w-full max-w-md bg-gray-900 border border-gray-700 rounded-xl p-6 shadow-2xl">
-              {/* Terminal Header Dots */}
-              <div className="flex gap-2 mb-4">
-                <div className="w-3 h-3 rounded-full bg-red-500/60" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
-                <div className="w-3 h-3 rounded-full bg-green-500/60" />
-              </div>
-
-              {/* Terminal Content */}
-              <div className="font-mono text-sm text-gray-300 space-y-2">
-                {terminalLines.map((line, idx) => {
-                  if (!line) return <div key={idx}>&nbsp;</div>;
-                  return (
-                    <div key={idx} className="animate-fade-in">
-                      {line.includes("import") ? (
-                        <div>
-                          <span className="text-pink-500">import</span>{" "}
-                          <span className="text-gray-300">{line.split("import ")[1]}</span>
-                        </div>
-                      ) : line.includes("pd.") || line.includes("df.") || line.includes("kpis") ? (
-                        <div>
-                          <span className="text-cyan-400">{line.split("(")[0]}</span>
-                          <span className="text-gray-300">
-                            {line.includes("(") ? line.substring(line.indexOf("(")) : ""}
-                          </span>
-                        </div>
-                      ) : line.includes("#") ? (
-                        <div className="text-gray-600 italic">{line}</div>
-                      ) : line.includes('"') ? (
-                        <div>
-                          <span className="text-yellow-400">{line}</span>
-                        </div>
-                      ) : (
-                        <div className="text-gray-300">{line}</div>
-                      )}
-                    </div>
-                  );
-                })}
-                {terminalLines.length === 9 && (
-                  <div className="text-green-400 mt-4">
-                    Dashboard Atualizado! ✓
-                  </div>
-                )}
-              </div>
-
-              {/* Stats */}
+            <div className="w-full">
+              <InteractiveTerminal />
+              {/* Stats Below Terminal */}
               <div className="mt-6 pt-4 border-t border-gray-700 flex justify-around text-center">
                 <div>
                   <div className="text-gray-500 text-xs uppercase tracking-wide mb-1">
@@ -270,17 +200,17 @@ export default function Home() {
                 ].map((skill) => (
                   <div
                     key={skill}
-                    className="bg-gray-900 border border-gray-800 rounded-lg p-3 text-sm hover:border-cyan-500 transition-colors cursor-pointer"
+                    className="bg-gray-900 border border-gray-800 rounded-lg p-3 text-sm hover:border-cyan-400 hover:bg-gray-800 hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:-translate-y-0.5"
                   >
-                    <span className="text-cyan-400">●</span> {skill}
+                    <span className="text-cyan-400 animate-pulse">●</span> {skill}
                   </div>
                 ))}
               </div>
             </div>
 
             <div className="flex flex-col gap-4 items-center justify-start">
-              <div className="text-center border border-gray-800 rounded-lg p-6 bg-gray-900 w-full">
-                <div className="text-3xl mb-2">🎓</div>
+              <div className="text-center border border-gray-800 rounded-lg p-6 bg-gray-900 w-full hover:border-cyan-400 hover:bg-gray-800 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                <div className="text-3xl mb-2 hover:animate-float">🎓</div>
                 <h3 className="text-white font-bold mb-1 text-sm">UNINTER</h3>
                 <p className="text-gray-500 text-xs">
                   CST em Ciência de Dados
@@ -289,15 +219,15 @@ export default function Home() {
                   2024 - 2027
                 </p>
               </div>
-              <div className="text-center border border-gray-800 rounded-lg p-6 bg-gray-900 w-full">
-                <div className="text-3xl mb-2">🌍</div>
+              <div className="text-center border border-gray-800 rounded-lg p-6 bg-gray-900 w-full hover:border-cyan-400 hover:bg-gray-800 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                <div className="text-3xl mb-2 hover:animate-float">🌍</div>
                 <h3 className="text-white font-bold mb-1 text-sm">Inglês C2</h3>
                 <p className="text-gray-500 text-xs">
                   Fluente
                 </p>
               </div>
-              <div className="text-center border border-gray-800 rounded-lg p-6 bg-gray-900 w-full">
-                <div className="text-3xl mb-2">🚀</div>
+              <div className="text-center border border-gray-800 rounded-lg p-6 bg-gray-900 w-full hover:border-cyan-400 hover:bg-gray-800 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                <div className="text-3xl mb-2 hover:animate-float">🚀</div>
                 <h3 className="text-white font-bold mb-1 text-sm">Data Driven</h3>
                 <p className="text-gray-500 text-xs">
                   Dados só têm valor quando geram impacto real.
@@ -344,7 +274,7 @@ export default function Home() {
             ].map((project, idx) => (
               <Link key={idx} href={`/projeto/${project.slug}`} className="no-underline">
               <div
-                className="bg-gray-900 border border-gray-800 rounded-lg p-6 hover:border-gray-700 hover:bg-gray-800 transition-all group cursor-pointer h-full"
+                className="bg-gray-900 border border-gray-800 rounded-lg p-6 hover:border-cyan-400 hover:bg-gray-800 hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 group cursor-pointer h-full transform hover:scale-105 hover:-translate-y-1"
               >
                 <div className="flex justify-between items-start mb-4">
                   <svg

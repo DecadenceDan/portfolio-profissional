@@ -1,7 +1,9 @@
+import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import InteractiveTerminal from "@/components/InteractiveTerminal";
+import ContactForm from "@/components/ContactForm";
 
 /**
  * Design Philosophy: Neon Dark Tech
@@ -13,6 +15,10 @@ import InteractiveTerminal from "@/components/InteractiveTerminal";
  */
 
 export default function Home() {
+  // The userAuth hooks provides authentication state
+  // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
+  let { user, loading, error, isAuthenticated, logout } = useAuth();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
@@ -485,7 +491,9 @@ export default function Home() {
             Estou sempre aberto a novas oportunidades e colaborações. Sinta-se à vontade para entrar em contato!
           </p>
 
-          <div className="flex gap-4 justify-center flex-wrap">
+          <ContactForm />
+
+          <div className="flex gap-4 justify-center flex-wrap mt-8">
             <a href="mailto:danilocsantos2005@gmail.com" target="_blank" rel="noopener noreferrer">
               <Button className="bg-white text-black hover:bg-gray-200 font-bold px-8 py-6 rounded-full">
                 Email

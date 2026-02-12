@@ -470,7 +470,7 @@ export default function Home() {
                     title: "Power BI + IA Bootcamp",
                     issuer: "Xperiun | Data Analytics",
                     date: "Jan 2026",
-                    link: "https://www.linkedin.com/learning-certificates/",
+                    link: "https://drive.google.com/file/d/1R4hzWWkL1b9_Iu0B5M3C51x2ORIvwsnT/view",
                   },
                   {
                     title: "Data Scientist Track",

@@ -143,7 +143,7 @@ export default function Home() {
                   variant="outline"
                   className="border border-cyan-400/50 text-cyan-400 hover:bg-cyan-400/10 font-bold px-8 py-6 rounded-full transition-all hover:border-cyan-400"
                 >
-                  Download CV
+                  Baixar Currículo
                 </Button>
               </a>
             </div>

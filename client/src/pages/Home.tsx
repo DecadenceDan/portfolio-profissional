@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
+import { Link } from "wouter";
 
 /**
  * Design Philosophy: Neon Dark Tech
@@ -205,15 +206,15 @@ export default function Home() {
               <div className="mt-6 pt-4 border-t border-gray-700 flex justify-around text-center">
                 <div>
                   <div className="text-gray-500 text-xs uppercase tracking-wide mb-1">
-                    Projetos
+                    Faturamento
                   </div>
                   <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-400 bg-clip-text text-transparent font-black text-xl">
-                    4+
+                    R$ 720.842
                   </div>
                 </div>
                 <div>
                   <div className="text-gray-500 text-xs uppercase tracking-wide mb-1">
-                    Certificações
+                    Lucro
                   </div>
                   <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-400 bg-clip-text text-transparent font-black text-xl">
                     4
@@ -221,10 +222,10 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="text-gray-500 text-xs uppercase tracking-wide mb-1">
-                    Nota
+                    Lucro
                   </div>
                   <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-400 bg-clip-text text-transparent font-black text-xl">
-                    9.7
+                    R$ 216,491
                   </div>
                 </div>
               </div>
@@ -318,28 +319,32 @@ export default function Home() {
             {[
               {
                 title: "Dashboard TechFlow Store",
+                slug: "techflow",
                 desc: "Solução de BI ponta a ponta com integração de IA. Geração de dados com Python/Pandas, ETL no Power Query, modelagem Star Schema, DAX avançado e Árvore de Decomposição para análise de causa raiz.",
                 tags: ["Power BI", "DAX", "Python", "IA", "Star Schema"],
               },
               {
                 title: "Inteligência Financeira",
+                slug: "financeiro",
                 desc: "Solução integrada com 3 dashboards estratégicos: Performance de Vendas, Fluxo de Caixa e Simulador Financeiro (What-If) para análise de cenários e tomada de decisão.",
                 tags: ["Power BI", "DAX", "Power Query", "What-If"],
               },
               {
                 title: "KPIs Setor Automotivo",
+                slug: "automotivo",
                 desc: "Dashboard para monitoramento de vendas brutas, ranking por país, comparativo custo vs faturamento, segmentos rentáveis e top produtos vendidos.",
                 tags: ["Power BI", "DAX", "ETL", "KPIs"],
               },
               {
                 title: "KPIs Fast Food",
+                slug: "fastfood",
                 desc: "Análise de indicadores comerciais e operacionais: evolução temporal do faturamento, lucratividade por categoria, perfil do cliente e eficiência operacional por região.",
                 tags: ["Power BI", "SQL", "GeoAnalytics", "KPIs"],
               },
             ].map((project, idx) => (
+              <Link key={idx} href={`/projeto/${project.slug}`} className="no-underline">
               <div
-                key={idx}
-                className="bg-gray-900 border border-gray-800 rounded-lg p-6 hover:border-gray-700 hover:bg-gray-800 transition-all group cursor-pointer"
+                className="bg-gray-900 border border-gray-800 rounded-lg p-6 hover:border-gray-700 hover:bg-gray-800 transition-all group cursor-pointer h-full"
               >
                 <div className="flex justify-between items-start mb-4">
                   <svg
@@ -377,6 +382,7 @@ export default function Home() {
                   ))}
                 </div>
               </div>
+              </Link>
             ))}
           </div>
         </div>

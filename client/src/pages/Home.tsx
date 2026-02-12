@@ -464,16 +464,19 @@ export default function Home() {
                     title: "Formação em Power BI",
                     issuer: "Escola DNC",
                     date: "Jan 2026",
+                    link: "https://files.dnc.group/journey/155714/cf96e653-9ddd-4852-b1bd-212044eb9f54.pdf",
                   },
                   {
                     title: "Power BI + IA Bootcamp",
                     issuer: "Xperiun | Data Analytics",
                     date: "Jan 2026",
+                    link: "https://www.linkedin.com/learning-certificates/",
                   },
                   {
                     title: "Data Scientist Track",
                     issuer: "365 Data Science",
                     date: "Ago 2025",
+                    link: "https://learn.365datascience.com/c/eb59c02f98",
                   },
                   {
                     title: "Santander Tech+ | Ciência de Dados",
@@ -484,14 +487,27 @@ export default function Home() {
                     title: "Formação em Python para Ciência de Dados",
                     issuer: "Alura",
                     date: "Ago 2024",
+                    link: "https://cursos.alura.com.br/degree/certificate/fa6bfff9-118c-400b-b7c8-84baee081829?lang",
                   },
                   {
                     title: "Formação em Análise de Dados com Google Sheets / Excel",
                     issuer: "Alura",
                     date: "Jul 2024",
+                    link: "https://cursos.alura.com.br/degree/certificate/e583ec78-4aab-4250-9f83-79cd4d6c8591?lang",
                   },
-                ].map((cert, idx) => (
-                  <div key={idx} className="bg-gray-900 border border-gray-800 rounded-lg p-4 hover:border-gray-700 transition-colors">
+                ].map((cert, idx) => cert.link ? (
+                  <a key={idx} href={cert.link} target="_blank" rel="noreferrer" className="block bg-gray-900 border border-gray-800 rounded-lg p-4 hover:border-cyan-400 hover:bg-gray-800 transition-colors cursor-pointer">
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <h4 className="text-white font-bold text-sm">{cert.title}</h4>
+                        <p className="text-gray-500 text-xs">{cert.issuer}</p>
+                        {cert.date && <p className="text-gray-600 text-xs font-mono mt-1">{cert.date}</p>}
+                      </div>
+                      <svg className="w-4 h-4 text-cyan-400 ml-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                    </div>
+                  </a>
+                ) : (
+                  <div key={idx} className="bg-gray-900 border border-gray-800 rounded-lg p-4 opacity-75">
                     <h4 className="text-white font-bold text-sm">{cert.title}</h4>
                     <p className="text-gray-500 text-xs">{cert.issuer}</p>
                     {cert.date && <p className="text-gray-600 text-xs font-mono mt-1">{cert.date}</p>}
@@ -509,9 +525,21 @@ export default function Home() {
                     title: "EF SET English Certificate 84/100 (C2 Proficient)",
                     issuer: "EF SET",
                     date: "Nov 2025",
+                    link: "https://cert.efset.org/en/gmFNcm",
                   },
-                ].map((cert, idx) => (
-                  <div key={idx} className="bg-gray-900 border border-gray-800 rounded-lg p-4 hover:border-gray-700 transition-colors">
+                ].map((cert, idx) => cert.link ? (
+                  <a key={idx} href={cert.link} target="_blank" rel="noreferrer" className="block bg-gray-900 border border-gray-800 rounded-lg p-4 hover:border-cyan-400 hover:bg-gray-800 transition-colors cursor-pointer">
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <h4 className="text-white font-bold text-sm">{cert.title}</h4>
+                        <p className="text-gray-500 text-xs">{cert.issuer}</p>
+                        {cert.date && <p className="text-gray-600 text-xs font-mono mt-1">{cert.date}</p>}
+                      </div>
+                      <svg className="w-4 h-4 text-cyan-400 ml-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                    </div>
+                  </a>
+                ) : (
+                  <div key={idx} className="bg-gray-900 border border-gray-800 rounded-lg p-4 opacity-75">
                     <h4 className="text-white font-bold text-sm">{cert.title}</h4>
                     <p className="text-gray-500 text-xs">{cert.issuer}</p>
                     {cert.date && <p className="text-gray-600 text-xs font-mono mt-1">{cert.date}</p>}

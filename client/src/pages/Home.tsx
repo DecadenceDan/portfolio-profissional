@@ -132,33 +132,6 @@ export default function Home() {
           <div className="flex justify-center items-center">
             <div className="w-full">
               <InteractiveTerminal />
-              {/* Stats Below Terminal */}
-              <div className="mt-6 pt-4 border-t border-gray-700 flex justify-around text-center">
-                <div>
-                  <div className="text-gray-500 text-xs uppercase tracking-wide mb-1">
-                    Faturamento
-                  </div>
-                  <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-400 bg-clip-text text-transparent font-black text-xl">
-                    R$ 720.842
-                  </div>
-                </div>
-                <div>
-                  <div className="text-gray-500 text-xs uppercase tracking-wide mb-1">
-                    Custos / Despesas
-                  </div>
-                  <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-400 bg-clip-text text-transparent font-black text-xl">
-                    R$ 504.351
-                  </div>
-                </div>
-                <div>
-                  <div className="text-gray-500 text-xs uppercase tracking-wide mb-1">
-                    Lucro
-                  </div>
-                  <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-400 bg-clip-text text-transparent font-black text-xl">
-                    R$ 216.491
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>

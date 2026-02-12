@@ -494,11 +494,6 @@ export default function Home() {
           <ContactForm />
 
           <div className="flex gap-4 justify-center flex-wrap mt-8">
-            <a href="mailto:danilocsantos2005@gmail.com" target="_blank" rel="noopener noreferrer">
-              <Button className="bg-white text-black hover:bg-gray-200 font-bold px-8 py-6 rounded-full">
-                Email
-              </Button>
-            </a>
             <a href="https://www.linkedin.com/in/danilocerqueiradados/" target="_blank" rel="noopener noreferrer">
               <Button
                 variant="outline"

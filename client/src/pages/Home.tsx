@@ -505,7 +505,7 @@ export default function Home() {
                 LinkedIn
               </Button>
             </a>
-            <a href="https://wa.me/5522988596587" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/22988596587" target="_blank" rel="noopener noreferrer">
               <Button
                 variant="outline"
                 className="border border-white/30 text-white hover:bg-white/5 font-bold px-8 py-6 rounded-full"

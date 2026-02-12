@@ -456,13 +456,18 @@ export default function Home() {
             {/* Certifications */}
             <div>
               <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
-                <span className="text-cyan-400">◆</span> Certificações
+                <span className="text-cyan-400">◆</span> Certificações Profissionais
               </h3>
               <div className="space-y-4">
                 {[
                   {
                     title: "Power BI + IA Bootcamp",
                     issuer: "Xperiun | Data Analytics",
+                    date: "Jan 2026",
+                  },
+                  {
+                    title: "Modelagem de Dados com Power BI",
+                    issuer: "Escola DNC",
                     date: "Jan 2026",
                   },
                   {
@@ -479,6 +484,61 @@ export default function Home() {
                     title: "Data Scientist Track",
                     issuer: "365 Data Science",
                     date: "Ago 2025",
+                  },
+                  {
+                    title: "Fundamentos de SQL",
+                    issuer: "Alura",
+                    date: "",
+                  },
+                  {
+                    title: "Python para Análise de Dados",
+                    issuer: "Alura",
+                    date: "",
+                  },
+                  {
+                    title: "Estatística com Python",
+                    issuer: "Alura",
+                    date: "",
+                  },
+                  {
+                    title: "Machine Learning com Python",
+                    issuer: "Alura",
+                    date: "",
+                  },
+                  {
+                    title: "Tableau Desktop Specialist",
+                    issuer: "Tableau",
+                    date: "",
+                  },
+                  {
+                    title: "Google Analytics Certification",
+                    issuer: "Google",
+                    date: "",
+                  },
+                  {
+                    title: "Scrum Master Certification",
+                    issuer: "Scrum.org",
+                    date: "",
+                  },
+                ].map((cert, idx) => (
+                  <div key={idx} className="bg-gray-900 border border-gray-800 rounded-lg p-4 hover:border-gray-700 transition-colors">
+                    <h4 className="text-white font-bold text-sm">{cert.title}</h4>
+                    <p className="text-gray-500 text-xs">{cert.issuer}</p>
+                    {cert.date && <p className="text-gray-600 text-xs font-mono mt-1">{cert.date}</p>}
+                  </div>
+                ))}
+              </div>
+
+              {/* English Certificate - Separate */}
+              <h3 className="text-lg font-bold text-white mb-6 mt-8 flex items-center gap-2">
+                <span className="text-cyan-400">◆</span> Idiomas
+              </h3>
+              <div className="space-y-4">
+                {[
+                  {
+                    title: "EF SET English Certificate",
+                    issuer: "EF SET • 84/100 (C2 Proficient)",
+                    date: "Fluente",
                   },
                 ].map((cert, idx) => (
                   <div key={idx} className="bg-gray-900 border border-gray-800 rounded-lg p-4 hover:border-gray-700 transition-colors">

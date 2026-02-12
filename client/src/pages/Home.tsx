@@ -138,7 +138,7 @@ export default function Home() {
               >
                 Entrar em Contato
               </Button>
-              <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663204593959/BcnBwcWxneRsgdCo.pdf" download>
+              <a href="/curriculo-danilo.pdf" download>
                 <Button
                   variant="outline"
                   className="border border-cyan-400/50 text-cyan-400 hover:bg-cyan-400/10 font-bold px-8 py-6 rounded-full transition-all hover:border-cyan-400"

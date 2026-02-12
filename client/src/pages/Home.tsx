@@ -214,10 +214,10 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="text-gray-500 text-xs uppercase tracking-wide mb-1">
-                    Lucro
+                    Custos / Despesas
                   </div>
                   <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-400 bg-clip-text text-transparent font-black text-xl">
-                    4
+                    R$ 504.351
                   </div>
                 </div>
                 <div>
@@ -225,7 +225,7 @@ export default function Home() {
                     Lucro
                   </div>
                   <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-400 bg-clip-text text-transparent font-black text-xl">
-                    R$ 216,491
+                    R$ 216.491
                   </div>
                 </div>
               </div>
@@ -286,14 +286,14 @@ export default function Home() {
                   CST em Ciência de Dados
                 </p>
                 <p className="text-cyan-400 text-xs font-mono mt-1">
-                  2024 - 2027 • Nota 9.7
+                  2024 - 2027
                 </p>
               </div>
               <div className="text-center border border-gray-800 rounded-lg p-6 bg-gray-900 w-full">
                 <div className="text-3xl mb-2">🌍</div>
                 <h3 className="text-white font-bold mb-1 text-sm">Inglês C2</h3>
                 <p className="text-gray-500 text-xs">
-                  EF SET 84/100 Proficient
+                  Fluente
                 </p>
               </div>
               <div className="text-center border border-gray-800 rounded-lg p-6 bg-gray-900 w-full">
@@ -442,7 +442,7 @@ export default function Home() {
               <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
                 <h4 className="text-white font-bold mb-1">Centro Universitário Internacional UNINTER</h4>
                 <p className="text-gray-400 text-sm mb-2">Curso Superior de Tecnologia (CST) em Ciência de Dados</p>
-                <p className="text-gray-500 text-xs font-mono mb-3">Jul 2024 - Jan 2027 • Nota: 9.7</p>
+                <p className="text-gray-500 text-xs font-mono mb-3">Jul 2024 - Jan 2027</p>
                 <div className="flex flex-wrap gap-2">
                   {["Python", "SQL", "Power BI", "Estatística", "Machine Learning", "Engenharia de Dados"].map((tag) => (
                     <span key={tag} className="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded font-mono">
@@ -471,8 +471,8 @@ export default function Home() {
                     date: "Jan 2026",
                   },
                   {
-                    title: "EF SET English Certificate",
-                    issuer: "EF SET • 84/100 (C2 Proficient)",
+                    title: "Data Analysis com Google Sheets / Excel",
+                    issuer: "Alura",
                     date: "",
                   },
                   {

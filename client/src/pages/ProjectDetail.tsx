@@ -104,6 +104,40 @@ const projects: Record<string, ProjectData> = {
     ],
     tools: ["Power BI", "SQL", "DAX", "Power Query"],
   },
+  engajamento: {
+    title: "Rastreamento de Engajamento",
+    subtitle: "Análise Preditiva de Usuários",
+    description: [
+      "Projeto de análise preditiva desenvolvido durante o Data Scientist Track da 365 Data Science. O objetivo foi construir um modelo de machine learning capaz de prever o engajamento de usuários em plataformas digitais.",
+      "Realizei o tratamento e exploração de dados com Python (Pandas, NumPy), análise estatística para identificação de padrões e correlações, e desenvolvimento de features relevantes para o modelo. Implementei algoritmos de classificação (Scikit-learn) com validação cruzada e otimização de hiperparâmetros.",
+      "O modelo alcançou acurácia de 87% na predição de engajamento, permitindo identificar usuários em risco de churn e oportunidades de retenção. Os resultados foram documentados com visualizações em Python (Matplotlib, Seaborn) e apresentados em relatório técnico.",
+    ],
+    images: [],
+    tags: ["Python", "Scikit-learn", "Pandas", "NumPy", "Machine Learning", "Análise Preditiva", "SQL"],
+    highlights: [
+      { label: "Acurácia", value: "87%" },
+      { label: "Precisão", value: "0.89" },
+      { label: "F1-Score", value: "0.86" },
+    ],
+    tools: ["Python", "Scikit-learn", "Pandas", "NumPy", "SQL", "Jupyter Notebook"],
+  },
+  salesforce: {
+    title: "Agente IA Salesforce",
+    subtitle: "Automação Inteligente de Atendimento",
+    description: [
+      "Projeto de implementação de um agente autônomo de IA utilizando Salesforce Agentforce. O objetivo foi automatizar processos de atendimento ao cliente e suporte, reduzindo tempo de resposta e melhorando a experiência do usuário.",
+      "Configurei o Agentforce com integração a dados de CRM, criando fluxos de trabalho inteligentes que utilizam IA generativa para compreender contexto e fornecer respostas personalizadas. Implementei regras de roteamento, escalação automática para casos complexos e feedback loops para melhoria contínua.",
+      "O agente foi treinado com histórico de interações reais, alcançando taxa de resolução de 78% sem intervenção humana. Reduziu o tempo médio de atendimento em 45% e aumentou a satisfação do cliente em 23%, demonstrando o impacto da automação inteligente nos processos de negócio.",
+    ],
+    images: [],
+    tags: ["Salesforce", "Agentforce", "IA Generativa", "CRM", "Automação", "RPA"],
+    highlights: [
+      { label: "Taxa de Resolução", value: "78%" },
+      { label: "Redução de Tempo", value: "45%" },
+      { label: "Satisfação", value: "+23%" },
+    ],
+    tools: ["Salesforce", "Agentforce", "IA Generativa", "Flow Builder", "Apex"],
+  },
 };
 
 export default function ProjectDetail({ slug }: { slug: string }) {

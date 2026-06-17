@@ -6,32 +6,35 @@
 - [x] Add hero indicators (Experience, Projects, Certifications, Technologies)
 - [x] Update CTA buttons (Projects, CV, LinkedIn, GitHub)
 - [x] Implement dark/light mode toggle
-- [ ] Add theme persistence to localStorage
+- [x] Add theme persistence to localStorage
 
 ## PHASE 2: Content Updates from LinkedIn
-- [ ] Update "Sobre" section with new bio and storytelling format
-- [ ] Update experience section with Indicium AI (Lighthouse Program)
-- [ ] Update Data Mundo experience with new dates and details
-- [ ] Add new certifications (Bradesco GenAI, Anthropic AI Fluency)
-- [ ] Update skills/competencies list
-- [ ] Update education section
+- [x] Update "Sobre" section with new bio and storytelling format
+- [x] Update experience section with Indicium AI (Lighthouse Program)
+- [x] Update Data Mundo experience with new dates and details
+- [x] Add new certifications (Bradesco GenAI, Anthropic AI Fluency)
+- [x] Update skills/competencies list
+- [x] Update education section
 
 ## PHASE 3: Projects Section Enhancement
-- [ ] Add new project: "Rastreamento de Engajamento de Usuários" (365 Data Science)
-- [ ] Add new project: "Agente Autônomo de IA com Salesforce Agentforce"
+- [x] Add new project: "Rastreamento de Engajamento de Usuários" (365 Data Science)
+- [x] Add new project: "Agente Autônomo de IA com Salesforce Agentforce"
 - [ ] Implement project filters (BI, Python, SQL, ML, IA, Dashboard)
 - [ ] Add project details: Problem, Solution, Impact, Technologies, Links
 - [ ] Implement smooth animations for project cards
 
 ## PHASE 4: Advanced Features
-- [ ] Enhance terminal with new commands (about, experience, projects, skills, certifications, education, contact, linkedin, github, resume, clear)
+- [x] Enhance terminal with new commands (about, experience, projects, skills, certifications, education, contact, linkedin, github, resume, clear)
 - [ ] Add autocomplete to terminal
-- [ ] Add command history to terminal
+- [x] Add command history to terminal (arrow up/down navigation)
 - [ ] Add suggestions to terminal
 - [ ] Implement typing effect in terminal
 - [ ] Create timeline for experience section
 - [ ] Create timeline for about section (storytelling)
 - [ ] Add badges/visual indicators for certifications
+- [x] Add localStorage theme persistence
+- [x] Write vitest tests for InteractiveTerminal component
+- [x] Write vitest tests for ProjectDetail component
 
 ## PHASE 5: Performance & SEO
 - [ ] Implement meta tags and Open Graph
@@ -57,9 +60,9 @@
 - [ ] Add Microsoft Clarity
 
 ## PHASE 7: Testing & Delivery
-- [ ] Write vitest tests for new components
-- [ ] Test dark/light mode functionality
-- [ ] Test terminal commands
+- [x] Write vitest tests for new components (InteractiveTerminal, ProjectDetail)
+- [x] Test dark/light mode functionality
+- [x] Test terminal commands
 - [ ] Test project filters
 - [ ] Test form submission
 - [ ] Test mobile responsiveness

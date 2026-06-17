@@ -18,7 +18,17 @@ export default function Home() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem('portfolio-theme');
+      return savedTheme ? savedTheme === 'dark' : true;
+    }
+    return true;
+  });
+
+  useEffect(() => {
+    localStorage.setItem('portfolio-theme', isDarkMode ? 'dark' : 'light');
+  }, [isDarkMode]);
 
   useEffect(() => {
     const handleScroll = () => {

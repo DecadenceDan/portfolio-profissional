@@ -369,7 +369,7 @@ export default function Home() {
                 company: "Indicium AI",
                 period: "mai 2026 - Presente",
                 location: "Nova York, Estados Unidos (Remoto)",
-                description: "Programa intensivo de 52 horas focado em Data Engineering, Analytics e Data Science. Domínio de dbt para transformação de dados, Databricks para processamento distribuído, Power BI para visualizações estratégicas, e aplicações de IA Generativa. Desenvolvimento de pipelines de dados, modelagem dimensional, e soluções analíticas end-to-end.",
+                description: "Programa imersivo de 6 meses (full-time, paid) combinando aprendizado prático com execução em projetos reais. Rotação por todos os domínios de dados: Data Analysis, Data Science, Analytics Engineering (dbt, modelagem dimensional), Data Engineering (pipelines, Databricks), e AI/LLMs (IA Generativa, RAG, agentes). Mentoria de profissionais sêniores, contribuição em projetos de clientes, desenvolvimento de competências estratégicas. 76% dos graduados são contratados full-time, com 73% permanecendo na empresa.",
               },
               {
                 title: "Analista de Dados",

@@ -339,18 +339,16 @@ export default function Home() {
                 link: "/projeto/salesforce",
               },
             ].map((project, idx) => (
-              <Link key={idx} href={project.link}>
-                <a className={`${isDarkMode ? 'bg-gray-900 border-gray-800 hover:border-cyan-400 hover:bg-gray-800' : 'bg-white border-gray-200 hover:border-cyan-400 hover:bg-gray-100'} border rounded-lg p-6 transition-all duration-300 transform hover:scale-105 hover:shadow-lg cursor-pointer`}>
-                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className={`${isDarkMode ? 'text-gray-400' : 'text-gray-600'} text-sm mb-4`}>{project.description}</p>
-                  <div className="flex gap-2 flex-wrap">
-                    {project.tools.map((tool) => (
-                      <span key={tool} className="text-xs bg-cyan-400/20 text-cyan-400 px-3 py-1 rounded-full">
-                        {tool}
-                      </span>
-                    ))}
-                  </div>
-                </a>
+              <Link key={idx} href={project.link} className={`${isDarkMode ? 'bg-gray-900 border-gray-800 hover:border-cyan-400 hover:bg-gray-800' : 'bg-white border-gray-200 hover:border-cyan-400 hover:bg-gray-100'} border rounded-lg p-6 transition-all duration-300 transform hover:scale-105 hover:shadow-lg cursor-pointer block`}>
+                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                <p className={`${isDarkMode ? 'text-gray-400' : 'text-gray-600'} text-sm mb-4`}>{project.description}</p>
+                <div className="flex gap-2 flex-wrap">
+                  {project.tools.map((tool) => (
+                    <span key={tool} className="text-xs bg-cyan-400/20 text-cyan-400 px-3 py-1 rounded-full">
+                      {tool}
+                    </span>
+                  ))}
+                </div>
               </Link>
             ))}
           </div>

@@ -142,12 +142,10 @@ export default function Home() {
             </div>
 
             <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
-              Data Analyst<br />
+              Analytics<br />
               <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-400 bg-clip-text text-transparent">
-                Business Intelligence
+                Engineer
               </span>
-              <br />
-              AI & Analytics
             </h1>
 
             <p className={`${isDarkMode ? 'text-gray-400' : 'text-gray-600'} text-lg mb-8 max-w-xl leading-relaxed`}>
@@ -302,7 +300,7 @@ export default function Home() {
             Projetos <span className={isDarkMode ? 'text-gray-600' : 'text-gray-400'}>em Destaque</span>
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-max">
             {[
               {
                 title: "Dashboard TechFlow Store",
@@ -371,16 +369,16 @@ export default function Home() {
               {
                 title: "Aluno do Programa Lighthouse",
                 company: "Indicium AI",
-                period: "mai 2026 - Presente (Paralelo)",
+                period: "mai 2026 - Presente",
                 location: "Nova York, Estados Unidos (Remoto)",
-                description: "Programa intensivo de desenvolvimento em Análise de Dados e Business Intelligence.",
+                description: "Programa intensivo de 52 horas focado em Data Engineering, Analytics e Data Science. Domínio de dbt para transformação de dados, Databricks para processamento distribuído, Power BI para visualizações estratégicas, e aplicações de IA Generativa. Desenvolvimento de pipelines de dados, modelagem dimensional, e soluções analíticas end-to-end.",
               },
               {
                 title: "Analista de Dados",
                 company: "Data Mundo",
-                period: "nov 2025 - Presente",
+                period: "nov 2025 - mai 2026",
                 location: "Porto Alegre, RS (Remoto)",
-                description: "Desenvolvimento de soluções analíticas, ETL com SQL e Pentaho, criação de dashboards em Power BI e Tableau, e suporte à tomada de decisão estratégica.",
+                description: "Desenvolvimento de soluções analíticas completas: ETL com SQL e Pentaho, criação de dashboards em Power BI e Tableau, modelagem de dados, análise exploratória e suporte à tomada de decisão estratégica. Experiência em Data Engineering, Analytics e Data Science com foco em transformação de dados brutos em insights acionáveis.",
               },
             ].map((exp, idx) => (
               <div key={idx} className={`${isDarkMode ? 'bg-gray-900 border-gray-800' : 'bg-white border-gray-200'} border rounded-lg p-6`}>

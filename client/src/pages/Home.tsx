@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import InteractiveTerminal from "@/components/InteractiveTerminal";
 import ContactForm from "@/components/ContactForm";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import BackToTop from "@/components/BackToTop";
 
 /**
  * Premium Portfolio Design
@@ -48,19 +50,20 @@ export default function Home() {
 
   return (
     <div className={`min-h-screen ${isDarkMode ? 'bg-black text-white' : 'bg-white text-black'} font-sans overflow-x-hidden transition-colors duration-300`}>
+      <ScrollProgressBar />
       {/* Background Glow Elements */}
       <div className="fixed top-[-20%] left-[20%] w-[60%] h-[60%] bg-gradient-to-br from-purple-900/20 to-transparent blur-[100px] -z-10 animate-pulse" />
       <div className="fixed bottom-[-20%] right-[10%] w-[50%] h-[50%] bg-gradient-to-tl from-cyan-500/10 to-transparent blur-[80px] -z-10" />
 
       {/* Header */}
-      <header className={`fixed top-0 w-full ${isDarkMode ? 'bg-black/80' : 'bg-white/80'} backdrop-blur-md z-50 border-b ${isDarkMode ? 'border-white/5' : 'border-black/10'} px-6 py-4`}>
-        <nav className="max-w-7xl mx-auto flex justify-between items-center">
+      <header className={`fixed top-0 w-full ${isDarkMode ? 'bg-black/80' : 'bg-white/80'} backdrop-blur-md z-50 border-b ${isDarkMode ? 'border-white/5' : 'border-black/10'} px-6 py-4`} role="banner">
+        <nav className="max-w-7xl mx-auto flex justify-between items-center" aria-label="Navegação principal">
           <div className="text-2xl font-black tracking-wider">
             DC<span className="bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-400 bg-clip-text text-transparent">.</span>Data
           </div>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex gap-10 list-none">
+          <ul className="hidden md:flex gap-10 list-none" role="navigation" aria-label="Menu de navegação">
             {[
               { label: "Início", id: "home" },
               { label: "Sobre", id: "about" },
@@ -85,12 +88,16 @@ export default function Home() {
             <button
               onClick={() => setIsDarkMode(!isDarkMode)}
               className={`p-2 rounded-lg ${isDarkMode ? 'bg-white/10 hover:bg-white/20' : 'bg-black/10 hover:bg-black/20'} transition-colors`}
+              aria-label={isDarkMode ? 'Mudar para modo claro' : 'Mudar para modo escuro'}
+              title={isDarkMode ? 'Modo claro' : 'Modo escuro'}
             >
               {isDarkMode ? '☀️' : '🌙'}
             </button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden text-2xl"
+              aria-label="Abrir menu de navegação"
+              aria-expanded={isMenuOpen}
             >
               ☰
             </button>
@@ -554,6 +561,8 @@ export default function Home() {
           </p>
         </div>
       </footer>
+      
+      <BackToTop isDarkMode={isDarkMode} />
     </div>
   );
 }

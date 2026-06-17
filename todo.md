@@ -37,24 +37,24 @@
 - [x] Write vitest tests for ProjectDetail component
 
 ## PHASE 5: Performance & SEO
-- [ ] Implement meta tags and Open Graph
-- [ ] Add Twitter Cards
+- [x] Implement meta tags and Open Graph
+- [x] Add Twitter Cards
 - [ ] Implement Schema Markup
-- [ ] Create robots.txt
-- [ ] Create sitemap.xml
+- [x] Create robots.txt
+- [x] Create sitemap.xml
 - [ ] Optimize images (lazy loading, compression)
 - [ ] Implement code splitting
 - [ ] Achieve Lighthouse scores > 95 (Performance, Accessibility, SEO, Best Practices)
 
 ## PHASE 6: Accessibility & Extras
 - [ ] Implement keyboard navigation
-- [ ] Add ARIA labels
+- [x] Add ARIA labels (navigation, theme toggle, menu)
 - [ ] Ensure contrast AA/AAA
 - [ ] Add screen reader support
 - [ ] Add custom cursor
 - [ ] Add command palette (CTRL + K)
-- [ ] Add scroll progress bar
-- [ ] Add back-to-top button
+- [x] Add scroll progress bar
+- [x] Add back-to-top button
 - [ ] Add 404 page
 - [ ] Add Google Analytics
 - [ ] Add Microsoft Clarity

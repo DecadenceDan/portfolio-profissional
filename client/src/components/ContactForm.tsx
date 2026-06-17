@@ -3,7 +3,7 @@ import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 
-export default function ContactForm() {
+export default function ContactForm({ isDarkMode = true }: { isDarkMode?: boolean }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -33,10 +33,16 @@ export default function ContactForm() {
     submitMutation.mutate(formData);
   };
 
+  const inputClasses = isDarkMode
+    ? "bg-gray-900 border-gray-800 text-white placeholder-gray-500 focus:border-cyan-400"
+    : "bg-white border-gray-200 text-black placeholder-gray-400 focus:border-cyan-400";
+
+  const labelClasses = isDarkMode ? "text-white" : "text-black";
+
   return (
     <form onSubmit={handleSubmit} className="space-y-4 max-w-2xl mx-auto">
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
+        <label htmlFor="name" className={`block text-sm font-medium ${labelClasses} mb-2`}>
           Nome
         </label>
         <input
@@ -46,13 +52,13 @@ export default function ContactForm() {
           value={formData.name}
           onChange={handleChange}
           required
-          className="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors"
+          className={`w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-cyan-400 transition-colors ${inputClasses}`}
           placeholder="Seu nome"
         />
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
+        <label htmlFor="email" className={`block text-sm font-medium ${labelClasses} mb-2`}>
           Email
         </label>
         <input
@@ -62,13 +68,13 @@ export default function ContactForm() {
           value={formData.email}
           onChange={handleChange}
           required
-          className="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors"
+          className={`w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-cyan-400 transition-colors ${inputClasses}`}
           placeholder="seu.email@exemplo.com"
         />
       </div>
 
       <div>
-        <label htmlFor="subject" className="block text-sm font-medium text-white mb-2">
+        <label htmlFor="subject" className={`block text-sm font-medium ${labelClasses} mb-2`}>
           Assunto
         </label>
         <input
@@ -78,13 +84,13 @@ export default function ContactForm() {
           value={formData.subject}
           onChange={handleChange}
           required
-          className="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors"
+          className={`w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-cyan-400 transition-colors ${inputClasses}`}
           placeholder="Assunto da mensagem"
         />
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
+        <label htmlFor="message" className={`block text-sm font-medium ${labelClasses} mb-2`}>
           Mensagem
         </label>
         <textarea
@@ -94,7 +100,7 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           rows={5}
-          className="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors resize-none"
+          className={`w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-cyan-400 transition-colors resize-none ${inputClasses}`}
           placeholder="Sua mensagem aqui..."
         />
       </div>

@@ -71,7 +71,7 @@ const AVAILABLE_COMMANDS = {
   },
 };
 
-export default function InteractiveTerminal() {
+export default function InteractiveTerminal({ isDarkMode = true }: { isDarkMode?: boolean }) {
   const [history, setHistory] = useState<TerminalCommand[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
